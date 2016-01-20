@@ -1,0 +1,27 @@
+@mixin css3call($key,$val){
+	-webkit-#{$key}:$val;
+}
+%hidden { visibility:hidden;}
+%clearfix{
+	*zoom: 1;
+	&:before,
+	&:after {
+		content: "";
+		display: table;
+		font: 0/0 a;
+	}
+	&:after {
+		clear: both;
+	}
+}
+*{ margin:0; padding:0; }
+
+.common_select_box{ 
+	width:98px; height:38px; line-height:40px; position: relative; border:1px solid #dbdbdb; 
+	span.common_select_val{ display:block; width:100%; text-align: center;  color:#fff;}
+	.common_select_list{ width:100%; position: absolute; left:0; top:0; 
+		.common_select_item{ width:100%; height:40px; display: block;
+		}
+	}
+	.common_select_list_close{ @extend %hidden;}
+}
